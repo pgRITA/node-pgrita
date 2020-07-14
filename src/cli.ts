@@ -148,9 +148,16 @@ async function main() {
 }
 
 main().catch((e) => {
-  console.error(e.message);
   if (e["usage"]) {
+    console.error("ERROR: " + e.message);
     console.log(USAGE);
+  } else if (e["code"] === "SELF_SIGNED_CERT_IN_CHAIN") {
+    console.error(
+      "ERROR: failed to establish an SSL connection to database due to a self-signed certificate in the certificate chain. You can use the `sslcert`, `sslkey` and `sslrootcert` query parameters to configure the connection string securely, or you could export the environmental variable `NODE_TLS_REJECT_UNAUTHORIZED=0` to disable SSL verification. Error message follows:"
+    );
+    console.error(e.message);
+  } else {
+    console.error("ERROR: " + e.message);
   }
   process.exit(1);
 });
