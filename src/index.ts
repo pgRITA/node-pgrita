@@ -122,6 +122,7 @@ export async function pgrita(options: pgRITAOptions) {
     ? options.pgPool
     : new Pool({
         connectionString: options.connectionString,
+        connectionTimeoutMillis: 10000,
       });
   if (!options.pgPool) {
     pool.on("error", (e: Error) => {
