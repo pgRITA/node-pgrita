@@ -57,7 +57,15 @@ If this fails, we'll progress without branch/hash.
 
 If you have PostgreSQL installed locally using trust authentication, your
 database name may suffice. Otherwise a standard PostgreSQL connection URI (e.g.
-`postgres://user:password@host:port/dbname`) should be supplied.
+`postgres://user:password@host:port/dbname`) should be supplied. If your
+PostgreSQL connection requires SSL (e.g. error such as
+`ERROR: no pg_hba.conf entry for host "xxx.xxx.xxx.xxx", user "***, database "***", SSL off`),
+you may need to add `?ssl=true` to the connection string. If you get an error
+such as `ERROR: self signed certificate` then the quickest fix is to add
+`?ssl=no-verify`; there are other more proper fixes but they're somewhat
+complex - we use the `pg` module (https://node-postgres.com/) as our PostgreSQL
+client, so more instructions can be found there (or ask on the
+[Graphile Discord](https://discord.gg/graphile)).
 
 You can read more about connection strings here:
 
