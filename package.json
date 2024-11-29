@@ -27,7 +27,7 @@
   },
   "scripts": {
     "build": "rm -rf dist cli && yarn ncc:prod src/cli.ts -o cli && yarn ncc:prod src/index.ts -o dist && chmod +x cli/index.js",
-    "ncc:prod": "ncc build -m -C --no-source-map-register"
+    "ncc:prod": "NODE_OPTIONS=--openssl-legacy-provider ncc build -m -C --no-source-map-register"
   },
   "dependencies": {},
   "devDependencies": {
