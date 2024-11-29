@@ -28,6 +28,11 @@
     "@types/node" "*"
     "@types/pg-types" "*"
 
+"@vercel/ncc@^0.38.3":
+  version "0.38.3"
+  resolved "https://registry.yarnpkg.com/@vercel/ncc/-/ncc-0.38.3.tgz#5475eeee3ac0f1a439f237596911525a490a88b5"
+  integrity sha512-rnK6hJBS6mwc+Bkab+PGPs9OiS0i/3kdTO+CkI8V0/VrW3vmz7O2Pxjw/owOlmo6PKEIxRSeZKv/kuL9itnpYA==
+
 asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"

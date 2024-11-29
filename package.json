@@ -27,12 +27,13 @@
   },
   "scripts": {
     "build": "rm -rf dist cli && yarn ncc:prod src/cli.ts -o cli && yarn ncc:prod src/index.ts -o dist && chmod +x cli/index.js",
-    "ncc:prod": "NODE_OPTIONS=--openssl-legacy-provider ncc build -m -C --no-source-map-register"
+    "ncc:prod": "ncc build -m -C --no-source-map-register"
   },
   "dependencies": {},
   "devDependencies": {
     "@types/node-fetch": "^2.5.7",
     "@types/pg": "^7.14.3",
+    "@vercel/ncc": "^0.38.3",
     "form-data": "^3.0.0",
     "node-fetch": "^2.6.0",
     "pg": "^8.3.0",
