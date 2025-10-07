@@ -27,6 +27,7 @@
   },
   "scripts": {
     "build": "rm -rf dist cli && yarn ncc:prod src/cli.ts -o cli && yarn ncc:prod src/index.ts -o dist && chmod +x cli/index.js",
+    "prepack": "yarn build",
     "ncc:prod": "ncc build -m -C --no-source-map-register"
   },
   "dependencies": {},
